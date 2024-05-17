@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXListView?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="602.0" prefWidth="758.0" style="-fx-background-color: #f24c4c;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.comicdex.PublisherPanelController">
+   <children>
+      <AnchorPane fx:id="mainPane" layoutY="-1.0" prefHeight="602.0" prefWidth="758.0">
+         <children>
+            <ImageView fitHeight="284.0" fitWidth="312.0" layoutX="253.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@assets/ComicDexLogo.png" />
+               </image>
+            </ImageView>
+            <JFXButton fx:id="AddComicButton" alignment="BOTTOM_CENTER" layoutX="133.0" layoutY="290.0" onMouseClicked="#pressAddComic" onMouseEntered="#enterAddComicButton" onMouseExited="#leaveAddComicButton" prefHeight="70.0" prefWidth="517.0" style="-fx-background-color: yellow; -fx-padding: 0 0 5 0; -fx-background-radius: 30 30 30 30;" text="Add Comic" textFill="#5e87f7">
+               <font>
+                  <Font name="Segoe UI Bold" size="17.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <ImageView disable="true" fitHeight="39.0" fitWidth="38.0" layoutX="373.0" layoutY="298.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@assets/plusGreen.png" />
+               </image>
+            </ImageView>
+            <JFXButton fx:id="RemoveComicButton" alignment="BOTTOM_CENTER" layoutX="132.0" layoutY="365.0" onMouseClicked="#pressRemoveComicButton" onMouseEntered="#enterRemoveComicButton" onMouseExited="#leaveRemoveComicButton" prefHeight="70.0" prefWidth="518.0" style="-fx-background-color: yellow; -fx-padding: 0 0 5 0; -fx-background-radius: 30 30 30 30;" text="Remove Comic" textFill="#5e87f7">
+               <font>
+                  <Font name="Segoe UI Bold" size="17.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <ImageView disable="true" fitHeight="38.0" fitWidth="38.0" layoutX="372.0" layoutY="374.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@assets/minusRed.png" />
+               </image>
+            </ImageView>
+            <JFXButton fx:id="SetSaleButton" alignment="BOTTOM_CENTER" layoutX="133.0" layoutY="440.0" onMouseClicked="#pressSetSButton" onMouseEntered="#enterSetSaleButton" onMouseExited="#leaveSetSaleButton" prefHeight="70.0" prefWidth="518.0" style="-fx-background-color: yellow; -fx-padding: 0 0 5 0; -fx-background-radius: 30 30 30 30;" text="Set Sale" textFill="#5e87f7">
+               <font>
+                  <Font name="Segoe UI Bold" size="17.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <ImageView disable="true" fitHeight="38.0" fitWidth="38.0" layoutX="372.0" layoutY="447.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@assets/coupon.png" />
+               </image>
+            </ImageView>
+            <JFXButton fx:id="logOut" alignment="CENTER" layoutX="614.0" layoutY="24.0" onMouseClicked="#pressLogoutButton" onMouseEntered="#enterLogoutButton" onMouseExited="#leaveLogoutButton" prefHeight="39.0" prefWidth="123.0" style="-fx-background-color: Red;" text="Log Out" textAlignment="CENTER" textFill="LIGHTGREEN">
+               <font>
+                  <Font name="Segoe UI Bold" size="17.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXButton fx:id="CheckComicButton" alignment="BOTTOM_CENTER" layoutX="132.0" layoutY="517.0" onMouseClicked="#pressCheckComic" onMouseEntered="#enterCheckComicButton" onMouseExited="#leaveCheckComicButton" prefHeight="70.0" prefWidth="518.0" style="-fx-background-color: yellow; -fx-padding: 0 0 5 0; -fx-background-radius: 30 30 30 30;" text="Check Publications" textFill="#5e87f7">
+               <font>
+                  <Font name="Segoe UI Bold" size="17.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <ImageView disable="true" fitHeight="38.0" fitWidth="38.0" layoutX="376.0" layoutY="524.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@assets/articles.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="AddComicPane" prefHeight="602.0" prefWidth="758.0" visible="false">
+         <children>
+            <ImageView fx:id="backIm1" fitHeight="95.0" fitWidth="109.0" layoutX="42.0" layoutY="36.0" onMouseClicked="#PressBackIm" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@assets/back.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <TextField fx:id="newComicName" alignment="CENTER" layoutX="257.0" layoutY="270.0" prefHeight="46.0" prefWidth="275.0" promptText="Comic Book Name">
+               <font>
+                  <Font name="Segoe UI" size="14.0" />
+               </font>
+            </TextField>
+            <ImageView fitHeight="239.0" fitWidth="267.0" layoutX="275.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@assets/ComicDexLogo.png" />
+               </image>
+            </ImageView>
+            <TextField fx:id="newComicPrice" alignment="CENTER" layoutX="257.0" layoutY="332.0" prefHeight="46.0" prefWidth="275.0" promptText="Price">
+               <font>
+                  <Font name="Segoe UI" size="14.0" />
+               </font>
+            </TextField>
+            <ImageView fitHeight="46.0" fitWidth="48.0" layoutX="214.0" layoutY="270.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@assets/comic2.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="46.0" fitWidth="48.0" layoutX="214.0" layoutY="332.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@assets/money.png" />
+               </image>
+            </ImageView>
+            <JFXButton fx:id="chooseFileButton" alignment="CENTER" layoutX="336.0" layoutY="399.0" onMouseClicked="#pressChooseFileButton" onMouseEntered="#enterChooseFileButton" onMouseExited="#leaveChooseFileButton" prefHeight="39.0" prefWidth="117.0" style="-fx-background-color: silver;" text="Select Comic">
+               <font>
+                  <Font name="Segoe UI" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXListView fx:id="ComicFolder" layoutX="104.0" layoutY="448.0" prefHeight="142.0" prefWidth="200.0" visible="false" />
+            <JFXListView fx:id="ChapterFolder" layoutX="503.0" layoutY="448.0" prefHeight="142.0" prefWidth="200.0" visible="false" />
+            <Text fx:id="op1" fill="WHITE" layoutX="42.0" layoutY="498.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Comic :" visible="false">
+               <font>
+                  <Font name="Segoe UI Bold" size="15.0" />
+               </font>
+            </Text>
+            <Text fx:id="op2" fill="WHITE" layoutX="421.0" layoutY="499.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Chapters :" visible="false">
+               <font>
+                  <Font name="Segoe UI Bold" size="15.0" />
+               </font>
+            </Text>
+            <Text fx:id="errMsg" fill="WHITE" layoutX="250.0" layoutY="255.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Error: Comic Book with that name already exists" visible="false">
+               <font>
+                  <Font name="Segoe UI Bold" size="14.0" />
+               </font>
+            </Text>
+            <JFXButton layoutX="593.0" layoutY="293.0" onMouseClicked="#enterFinalAddComicButton" prefHeight="70.0" prefWidth="123.0" style="-fx-background-color: yellow;" text="Add Comic" textFill="#5e87f7">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <font>
+                  <Font name="Segoe UI Bold" size="14.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="RemoveComicPane" prefHeight="602.0" prefWidth="758.0" visible="false">
+         <children>
+            <ImageView fx:id="backIm2" fitHeight="95.0" fitWidth="109.0" layoutX="42.0" layoutY="36.0" onMouseClicked="#PressBackIm" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@assets/back.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView fitHeight="299.0" fitWidth="316.0" layoutX="243.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@assets/ComicDexLogo.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="70.0" fitWidth="70.0" layoutX="118.0" layoutY="391.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@assets/trash.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="70.0" fitWidth="83.0" layoutX="385.0" layoutY="313.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@assets/comic2.png" />
+               </image>
+            </ImageView>
+            <JFXButton fx:id="delComicButton" alignment="CENTER" layoutX="523.0" layoutY="498.0" onMouseClicked="#pressDelComicButton" onMouseEntered="#enterDelComicButton" onMouseExited="#leaveDelComicButton" prefHeight="56.0" prefWidth="143.0" style="-fx-background-color: yellow;" text="Delete" textFill="#5e87f7">
+               <font>
+                  <Font name="Segoe UI Bold" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXComboBox fx:id="removeComicComboBox" layoutX="183.0" layoutY="398.0" prefHeight="70.0" prefWidth="474.0" promptText="Select Comic Book" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="SetSalePane" prefHeight="602.0" prefWidth="758.0" visible="false">
+         <children>
+            <ImageView fx:id="backIm3" fitHeight="95.0" fitWidth="109.0" layoutX="42.0" layoutY="36.0" onMouseClicked="#PressBackIm" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@assets/back.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView fitHeight="299.0" fitWidth="316.0" layoutX="243.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@assets/ComicDexLogo.png" />
+               </image>
+            </ImageView>
+            <TextField fx:id="setSaleField" layoutX="193.0" layoutY="440.0" prefHeight="56.0" prefWidth="454.0" promptText="Enter Updated Price" style="-fx-border-color: #4d4d4d; -fx-border-width: 0 0 1 0; -fx-background-color: transparent;">
+               <font>
+                  <Font name="Segoe UI" size="17.0" />
+               </font>
+            </TextField>
+            <ImageView fitHeight="56.0" fitWidth="70.0" layoutX="126.0" layoutY="440.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@assets/money.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="70.0" fitWidth="70.0" layoutX="379.0" layoutY="278.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@assets/coupon.png" />
+               </image>
+            </ImageView>
+            <JFXButton fx:id="setSaleButton" alignment="CENTER" layoutX="542.0" layoutY="516.0" onMouseClicked="#pressSetSaleButton" onMouseEntered="#enterDelComicButton" onMouseExited="#leaveDelComicButton" prefHeight="56.0" prefWidth="143.0" style="-fx-background-color: yellow;" text="Update" textFill="#5e87f7">
+               <font>
+                  <Font name="Segoe UI Bold" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <ImageView fitHeight="56.0" fitWidth="70.0" layoutX="126.0" layoutY="373.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@assets/comic2.png" />
+               </image>
+            </ImageView>
+            <JFXComboBox fx:id="setSaleComboBox" layoutX="197.0" layoutY="378.0" prefHeight="46.0" prefWidth="454.0" promptText="Enter Comic Book">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXComboBox>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="CheckComicPane" prefHeight="602.0" prefWidth="758.0" visible="false">
+         <children>
+            <ImageView fx:id="backIm4" fitHeight="95.0" fitWidth="109.0" layoutX="42.0" layoutY="36.0" onMouseClicked="#PressBackIm" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@assets/back.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView fitHeight="252.0" fitWidth="239.0" layoutX="270.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@assets/ComicDexLogo.png" />
+               </image>
+            </ImageView>
+            <TableView fx:id="pubInfo" layoutX="18.0" layoutY="269.0" prefHeight="323.0" prefWidth="723.0">
+              <columns>
+                <TableColumn fx:id="Name1" prefWidth="199.9999656677246" text="Comic Name" />
+                <TableColumn fx:id="Price1" prefWidth="62.40003967285156" text="Price" />
+                  <TableColumn fx:id="chapterNum1" prefWidth="71.20001220703125" text="Chapter #" />
+                  <TableColumn fx:id="ComicPath1" prefWidth="188.79998779296875" text="Comic Path" />
+                  <TableColumn fx:id="ChapterPath1" prefWidth="206.39996337890625" text="Chapter Path" />
+              </columns>
+            </TableView>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

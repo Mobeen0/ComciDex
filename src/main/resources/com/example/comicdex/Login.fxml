@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="602.0" prefWidth="758.0" style="-fx-background-color: #f24c4c;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.comicdex.LoginController">
+   <children>
+      <ImageView fitHeight="284.0" fitWidth="312.0" layoutX="250.0" layoutY="71.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@assets/ComicDexLogo.png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="userName" alignment="CENTER" layoutX="300.0" layoutY="355.0" prefHeight="26.0" prefWidth="198.0" promptText="Username" style="-fx-background-color: transparent; -fx-border-color: #4d4d4d; -fx-border-width: 0 0 1 0;">
+         <font>
+            <Font name="Segoe UI" size="12.0" />
+         </font></TextField>
+      <PasswordField fx:id="pass" alignment="CENTER" layoutX="300.0" layoutY="406.0" prefHeight="26.0" prefWidth="198.0" promptText="Password" style="-fx-background-color: transparent; -fx-border-color: #4d4d4d; -fx-border-width: 0 0 1 0;" />
+      <StackPane layoutX="250.0" layoutY="355.0" prefHeight="26.0" prefWidth="26.0">
+         <children>
+            <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@assets/profile-user.png" />
+               </image>
+            </ImageView>
+         </children>
+      </StackPane>
+      <StackPane layoutX="250.0" layoutY="406.0" prefHeight="26.0" prefWidth="26.0">
+         <children>
+            <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@assets/password.png" />
+               </image>
+            </ImageView>
+         </children>
+      </StackPane>
+      <CheckBox layoutX="241.0" layoutY="478.0" mnemonicParsing="false" text="Remember me?" textFill="#5e87f7">
+         <font>
+            <Font name="Verdana Italic" size="12.0" />
+         </font>
+      </CheckBox>
+      <ImageView fx:id="load" fitHeight="88.0" fitWidth="94.0" layoutX="355.0" layoutY="305.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@assets/loading2.gif" />
+         </image>
+      </ImageView>
+      <Text fill="#130a0a" layoutX="333.0" layoutY="537.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-underline: true;" text="Forgot your Password?">
+         <font>
+            <Font name="Segoe UI" size="13.0" />
+         </font>
+      </Text>
+      <JFXButton fx:id="sign1" layoutX="619.0" layoutY="42.0" onMouseClicked="#onSignClick" onMouseEntered="#onHoverSign1" onMouseExited="#onHoverLeaveSign1" prefHeight="38.0" prefWidth="94.0" style="-fx-background-color: yellow;" text="Sign Up?" textFill="#5e87f7">
+         <font>
+            <Font name="Segoe UI Bold" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton fx:id="log1" layoutX="487.0" layoutY="459.0" onMouseClicked="#onLogClick" onMouseEntered="#onHoverLog1" onMouseExited="#onHoverLeaveLog1" prefHeight="38.0" prefWidth="94.0" style="-fx-background-color: yellow;" text="Log In" textFill="#5e87f7">
+         <font>
+            <Font name="Segoe UI Bold" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <Text fx:id="error" fill="WHITE" layoutX="240.0" layoutY="455.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Error Message: Invalid Username or Password! Try again " visible="false">
+         <font>
+            <Font name="Segoe UI" size="12.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>

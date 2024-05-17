@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="602.0" prefWidth="758.0" style="-fx-background-color: #f24c4c;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.comicdex.SignupController">
+   <children>
+      <ImageView fitHeight="284.0" fitWidth="312.0" layoutX="253.0" layoutY="42.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@assets/ComicDexLogo.png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="UserName" alignment="CENTER" layoutX="283.0" layoutY="301.0" prefHeight="26.0" prefWidth="224.0" promptText="New Username" style="-fx-background-color: transparent; -fx-border-color: #4d4d4d; -fx-border-width: 0 0 1 0;">
+         <font>
+            <Font name="Segoe UI" size="12.0" />
+         </font></TextField>
+      <TextField fx:id="email" alignment="CENTER" layoutX="284.0" layoutY="418.0" prefHeight="26.0" prefWidth="224.0" promptText="Email" style="-fx-background-color: transparent; -fx-border-color: #4d4d4d; -fx-border-width: 0 0 1 0;" />
+      <TextField fx:id="addr" alignment="CENTER" layoutX="283.0" layoutY="484.0" prefHeight="26.0" prefWidth="224.0" promptText="Address" style="-fx-background-color: transparent; -fx-border-color: #4d4d4d; -fx-border-width: 0 0 1 0;" />
+      <ImageView fx:id="load" fitHeight="104.0" fitWidth="123.0" layoutX="326.0" layoutY="347.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@assets/loading2.gif" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="26.0" fitWidth="25.0" layoutX="253.0" layoutY="301.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@assets/profile-user.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="26.0" fitWidth="25.0" layoutX="108.0" layoutY="380.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@assets/password.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="26.0" fitWidth="25.0" layoutX="383.0" layoutY="380.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@assets/password.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="26.0" fitWidth="25.0" layoutX="253.0" layoutY="419.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@assets/mail.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="26.0" fitWidth="25.0" layoutX="253.0" layoutY="485.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@assets/maps-and-flags.png" />
+         </image>
+      </ImageView>
+      <JFXButton fx:id="log1" layoutX="619.0" layoutY="42.0" onMouseClicked="#onLogClick" onMouseEntered="#onHoverLog1" onMouseExited="#onHoverLeaveLog1" prefHeight="38.0" prefWidth="94.0" style="-fx-background-color: yellow;" text="Log In" textFill="#5e87f7">
+         <font>
+            <Font name="Segoe UI Bold" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton fx:id="sign1" layoutX="151.0" layoutY="538.0" onMouseClicked="#onSignClick" onMouseEntered="#onHoverSign1" onMouseExited="#onHoverLeaveSign1" prefHeight="38.0" prefWidth="464.0" style="-fx-background-color: yellow;" text="Sign Up" textFill="#5e87f7">
+         <font>
+            <Font name="Segoe UI Bold" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXRadioButton fx:id="cust" layoutX="237.0" layoutY="451.0" onMouseClicked="#onCustClick" text="Customer" textFill="WHITE">
+         <font>
+            <Font name="Segoe UI Bold" size="14.0" />
+         </font>
+         <selectedColor>
+            <Color red="0.3686274588108063" green="0.529411792755127" blue="0.9686274528503418" />
+         </selectedColor>
+         <unSelectedColor>
+            <Color red="1.0" green="1.0" />
+         </unSelectedColor>
+      </JFXRadioButton>
+      <JFXRadioButton fx:id="publ" layoutX="446.0" layoutY="451.0" onMouseClicked="#onPublClick" text="Publisher" textFill="WHITE">
+         <font>
+            <Font name="Segoe UI Bold" size="14.0" />
+         </font>
+         <selectedColor>
+            <Color red="0.3686274588108063" green="0.529411792755127" blue="0.9686274528503418" />
+         </selectedColor>
+         <unSelectedColor>
+            <Color red="1.0" green="1.0" />
+         </unSelectedColor>
+      </JFXRadioButton>
+      <Text fx:id="errMsg" fill="WHITE" layoutX="315.0" layoutY="523.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Error Message: " visible="false" />
+      <TextField fx:id="fname" alignment="CENTER" layoutX="141.0" layoutY="335.0" prefHeight="26.0" prefWidth="224.0" promptText="First Name" style="-fx-background-color: transparent; -fx-border-color: #4d4d4d; -fx-border-width: 0 0 1 0;" visible="false" />
+      <TextField fx:id="lname" alignment="CENTER" layoutX="417.0" layoutY="335.0" prefHeight="26.0" prefWidth="224.0" promptText="Last Name" style="-fx-background-color: transparent; -fx-border-color: #4d4d4d; -fx-border-width: 0 0 1 0;" visible="false" />
+      <ImageView fx:id="fnameImage" fitHeight="26.0" fitWidth="25.0" layoutX="108.0" layoutY="335.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@assets/name.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="lnameImage" fitHeight="26.0" fitWidth="25.0" layoutX="384.0" layoutY="336.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@assets/name.png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="pubName" alignment="CENTER" layoutX="141.0" layoutY="336.0" prefHeight="26.0" prefWidth="224.0" promptText="Publisher Name" style="-fx-background-color: transparent; -fx-border-color: #4d4d4d; -fx-border-width: 0 0 1 0;" visible="false" />
+      <ImageView fx:id="pubImage" fitHeight="26.0" fitWidth="25.0" layoutX="108.0" layoutY="337.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@assets/comic.png" />
+         </image>
+      </ImageView>
+      <PasswordField fx:id="pass" alignment="CENTER" layoutX="141.0" layoutY="379.0" prefHeight="26.0" prefWidth="224.0" promptText="Password" style="-fx-background-color: transparent; -fx-border-color: #4d4d4d; -fx-border-width: 0 0 1 0;" />
+      <PasswordField fx:id="cPass" alignment="CENTER" layoutX="417.0" layoutY="379.0" prefHeight="26.0" prefWidth="224.0" promptText="Confirm Password" style="-fx-background-color: transparent; -fx-border-color: #4d4d4d; -fx-border-width: 0 0 1 0;" />
+      <TextField fx:id="bankNo" alignment="CENTER" layoutX="417.0" layoutY="336.0" prefHeight="26.0" prefWidth="224.0" promptText="Bank Account Num" style="-fx-background-color: transparent; -fx-border-color: #4d4d4d; -fx-border-width: 0 0 1 0;" visible="false" />
+   </children>
+</AnchorPane>

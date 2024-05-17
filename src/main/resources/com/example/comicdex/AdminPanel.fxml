@@ -1,0 +1,543 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="602.0" prefWidth="758.0" style="-fx-background-color: #f24c4c;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.comicdex.AdminController">
+   <children>
+      <AnchorPane fx:id="menu1" layoutX="10.0" layoutY="10.0" prefHeight="602.0" prefWidth="758.0" visible="false">
+         <children>
+            <ImageView fitHeight="284.0" fitWidth="312.0" layoutX="253.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@assets/ComicDexLogo.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="backIm1" fitHeight="75.0" fitWidth="76.0" layoutX="29.0" layoutY="20.0" onMouseClicked="#clickBack" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@assets/back.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <TableView fx:id="checkCustomerView" layoutX="17.0" layoutY="266.0" prefHeight="327.0" prefWidth="714.0">
+              <columns>
+                <TableColumn fx:id="ID1" prefWidth="32.800018310546875" text="ID1" />
+                <TableColumn fx:id="UserName" prefWidth="67.99996948242188" text="UserName" />
+                  <TableColumn fx:id="Password" prefWidth="72.79998779296875" text="Password" />
+                  <TableColumn fx:id="Email" prefWidth="118.39996337890625" text="Email" />
+                  <TableColumn fx:id="Date" prefWidth="104.0" text="Date Created" />
+                  <TableColumn fx:id="Type" prefWidth="42.39996337890625" text="Type" />
+                  <TableColumn fx:id="ID2" prefWidth="33.5999755859375" text="ID2" />
+                  <TableColumn fx:id="FirstName" prefWidth="89.60003662109375" text="First Name" />
+                  <TableColumn fx:id="LastName" prefWidth="99.199951171875" text="Last Name" />
+                  <TableColumn fx:id="bal" prefWidth="56.0" text="Bal" />
+              </columns>
+            </TableView>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="menu2" prefHeight="602.0" prefWidth="758.0" visible="false">
+         <children>
+            <ImageView fitHeight="284.0" fitWidth="312.0" layoutX="253.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@assets/ComicDexLogo.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="backIm2" fitHeight="75.0" fitWidth="76.0" layoutX="29.0" layoutY="20.0" onMouseClicked="#clickBack" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@assets/back.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <TextField fx:id="deleteCustField" alignment="CENTER" layoutX="182.0" layoutY="339.0" prefHeight="60.0" prefWidth="458.0" promptText="Customer Username you want to delete" style="-fx-background-color: transparent; -fx-border-color: #4d4d4d; -fx-border-width: 0 0 1 0;">
+               <font>
+                  <Font name="Segoe UI" size="20.0" />
+               </font>
+            </TextField>
+            <Text layoutX="44.0" layoutY="437.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+            <ImageView fitHeight="50.0" fitWidth="60.0" layoutX="119.0" layoutY="344.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@assets/profile-user.png" />
+               </image>
+            </ImageView>
+            <JFXButton fx:id="deleteCustButton" layoutX="172.0" layoutY="506.0" onMouseClicked="#onCustDeleteButtonClick" prefHeight="60.0" prefWidth="478.0" style="-fx-background-color: yellow;" text="Delete" textFill="#5e87f7">
+               <font>
+                  <Font name="Segoe UI Bold" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <Text fx:id="deleteCustText" fill="WHITE" layoutX="280.0" layoutY="455.0" strokeType="OUTSIDE" strokeWidth="0.0" text="If the user Exist then they are deleted" visible="false">
+               <font>
+                  <Font name="Segoe UI" size="14.0" />
+               </font>
+            </Text>
+         </children></AnchorPane>
+      <AnchorPane fx:id="menu3" layoutX="10.0" layoutY="10.0" prefHeight="602.0" prefWidth="758.0" visible="false">
+         <children>
+            <TextField fx:id="searchbar" alignment="CENTER" layoutX="164.0" layoutY="130.0" prefHeight="36.0" prefWidth="450.0" promptText="Search Username">
+               <font>
+                  <Font name="Segoe UI" size="14.0" />
+               </font>
+            </TextField>
+            <StackPane fx:id="searchIm" layoutX="614.0" layoutY="128.0" onMouseClicked="#pressSearchIm" onMouseEntered="#enterSearchIm" onMouseExited="#exitSearchIM">
+               <children>
+                  <ImageView fitHeight="44.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@assets/magnifying-glass.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+               </children>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </StackPane>
+            <ImageView fitHeight="39.0" fitWidth="39.0" layoutX="118.0" layoutY="129.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@assets/communication.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="134.0" fitWidth="163.0" layoutX="326.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@assets/ComicDexLogo.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="backIm3" fitHeight="75.0" fitWidth="76.0" layoutX="29.0" layoutY="20.0" onMouseClicked="#clickBack" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@assets/back.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <AnchorPane fx:id="custUpdatePane" layoutX="120.0" layoutY="241.0" prefHeight="340.0" prefWidth="592.0" visible="false">
+               <children>
+                  <TextField fx:id="newUser" alignment="CENTER" layoutX="210.0" prefHeight="36.0" prefWidth="229.0" promptText="New Username">
+                     <font>
+                        <Font name="Segoe UI" size="14.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="newPass" alignment="CENTER" layoutX="210.0" layoutY="43.0" prefHeight="36.0" prefWidth="229.0" promptText="New Password">
+                     <font>
+                        <Font name="Segoe UI" size="14.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="newEmail" alignment="CENTER" layoutX="210.0" layoutY="84.0" prefHeight="36.0" prefWidth="229.0" promptText="New Email">
+                     <font>
+                        <Font name="Segoe UI" size="14.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="newFname" alignment="CENTER" layoutX="210.0" layoutY="173.0" prefHeight="36.0" prefWidth="229.0" promptText="New First Name">
+                     <font>
+                        <Font name="Segoe UI" size="14.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="newLname" alignment="CENTER" layoutX="210.0" layoutY="216.0" prefHeight="36.0" prefWidth="229.0" promptText="New Last Name">
+                     <font>
+                        <Font name="Segoe UI" size="14.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="newBal" alignment="CENTER" layoutX="210.0" layoutY="264.0" prefHeight="36.0" prefWidth="229.0" promptText="New Balance">
+                     <font>
+                        <Font name="Segoe UI" size="14.0" />
+                     </font>
+                  </TextField>
+                  <Text fx:id="oldUser" fill="WHITE" layoutX="7.0" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username: " textAlignment="RIGHT" wrappingWidth="134.0">
+                     <font>
+                        <Font name="Segoe UI" size="15.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="oldPass" fill="WHITE" layoutX="-1.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password:" textAlignment="RIGHT" wrappingWidth="134.0">
+                     <font>
+                        <Font name="Segoe UI" size="15.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="oldEmail" fill="WHITE" layoutX="7.0" layoutY="108.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email:" textAlignment="RIGHT" wrappingWidth="127.457275390625">
+                     <font>
+                        <Font name="Segoe UI" size="15.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="oldFname" fill="WHITE" layoutX="-1.0" layoutY="197.0" strokeType="OUTSIDE" strokeWidth="0.0" text="First Name:" textAlignment="RIGHT" wrappingWidth="134.0">
+                     <font>
+                        <Font name="Segoe UI" size="15.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="oldLname" fill="WHITE" layoutX="-1.0" layoutY="239.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Last Name:" textAlignment="RIGHT" wrappingWidth="134.0">
+                     <font>
+                        <Font name="Segoe UI" size="15.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="oldBal" fill="WHITE" layoutX="7.0" layoutY="286.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Balance:" textAlignment="RIGHT" wrappingWidth="127.457275390625">
+                     <font>
+                        <Font name="Segoe UI" size="15.0" />
+                     </font>
+                  </Text>
+                  <ImageView fitHeight="36.0" fitWidth="31.0" layoutX="159.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@assets/profile-user.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="36.0" fitWidth="31.0" layoutX="159.0" layoutY="46.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@assets/password.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="36.0" fitWidth="31.0" layoutX="159.0" layoutY="87.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@assets/mail.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="36.0" fitWidth="31.0" layoutX="166.0" layoutY="175.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@assets/name.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="36.0" fitWidth="31.0" layoutX="166.0" layoutY="218.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@assets/name.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="36.0" fitWidth="31.0" layoutX="166.0" layoutY="265.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@assets/money.png" />
+                     </image>
+                  </ImageView>
+                  <StackPane fx:id="custUpdateFinalButton" layoutX="513.0" layoutY="275.0" onMouseClicked="#pressCustUpdateIm" onMouseEntered="#enterCustUpdateIm" onMouseExited="#exitCustUpdateIm">
+                     <children>
+                        <ImageView fitHeight="60.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@assets/update.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
+                     </children>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </StackPane>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="menu4" layoutX="10.0" layoutY="10.0" prefHeight="602.0" prefWidth="758.0" visible="false">
+         <children>
+            <ImageView fitHeight="284.0" fitWidth="312.0" layoutX="253.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@assets/ComicDexLogo.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="backIm4" fitHeight="75.0" fitWidth="76.0" layoutX="29.0" layoutY="20.0" onMouseClicked="#clickBack" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@assets/back.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <TableView fx:id="checkPublisherView" layoutX="4.0" layoutY="310.0" prefHeight="284.0" prefWidth="751.0">
+              <columns>
+                <TableColumn fx:id="ID12" prefWidth="41.60003662109375" text="ID" />
+                <TableColumn fx:id="UserName2" prefWidth="91.99993896484375" text="UserName" />
+                  <TableColumn fx:id="Password2" prefWidth="84.79998779296875" text="Password" />
+                  <TableColumn fx:id="Email2" prefWidth="116.0" text="Email" />
+                  <TableColumn fx:id="Date2" prefWidth="110.4000244140625" text="Date" />
+                  <TableColumn fx:id="Type2" prefWidth="41.5999755859375" text="Type" />
+                  <TableColumn fx:id="ID22" prefWidth="30.4000244140625" text="ID" />
+                  <TableColumn fx:id="Name2" prefWidth="139.99993896484375" text="Name" />
+                  <TableColumn fx:id="Bankno" prefWidth="91.99993896484375" text="Bank no" />
+              </columns>
+            </TableView>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="menu5" layoutX="10.0" layoutY="10.0" prefHeight="602.0" prefWidth="758.0" visible="false">
+         <children>
+            <ImageView fitHeight="284.0" fitWidth="312.0" layoutX="253.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@assets/ComicDexLogo.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="backIm5" fitHeight="75.0" fitWidth="76.0" layoutX="29.0" layoutY="20.0" onMouseClicked="#clickBack" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@assets/back.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <TextField fx:id="deletePubField" alignment="CENTER" layoutX="182.0" layoutY="339.0" prefHeight="60.0" prefWidth="458.0" promptText="Publisher Username you want to delete" style="-fx-background-color: transparent; -fx-border-color: #4d4d4d; -fx-border-width: 0 0 1 0;">
+               <font>
+                  <Font name="Segoe UI" size="20.0" />
+               </font>
+            </TextField>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" />
+            <ImageView fitHeight="50.0" fitWidth="60.0" layoutX="119.0" layoutY="344.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@assets/profile-user.png" />
+               </image>
+            </ImageView>
+            <JFXButton fx:id="deletePubButton" layoutX="172.0" layoutY="506.0" onMouseClicked="#onPubDeleteButtonClick" prefHeight="60.0" prefWidth="478.0" style="-fx-background-color: yellow;" text="Delete" textFill="#5e87f7">
+               <font>
+                  <Font name="Segoe UI Bold" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <Text fx:id="deletePubText" fill="WHITE" layoutX="296.0" layoutY="453.0" strokeType="OUTSIDE" strokeWidth="0.0" text="If the user Exist then they are deleted" visible="false">
+               <font>
+                  <Font name="Segoe UI" size="14.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="menu6" layoutX="10.0" layoutY="10.0" prefHeight="602.0" prefWidth="758.0" visible="false">
+         <children>
+            <ImageView fitHeight="134.0" fitWidth="163.0" layoutX="326.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@assets/ComicDexLogo.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="backIm6" fitHeight="75.0" fitWidth="76.0" layoutX="29.0" layoutY="20.0" onMouseClicked="#clickBack" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@assets/back.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <TextField fx:id="searchbar2" alignment="CENTER" layoutX="164.0" layoutY="130.0" prefHeight="36.0" prefWidth="450.0" promptText="Search Username">
+               <font>
+                  <Font name="Segoe UI" size="14.0" />
+               </font>
+            </TextField>
+            <StackPane fx:id="searchIm2" layoutX="614.0" layoutY="129.0" onMouseClicked="#pressSearchIm2" onMouseEntered="#enterSearchIm" onMouseExited="#exitSearchIM">
+               <children>
+                  <ImageView fitHeight="39.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@assets/magnifying-glass.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </StackPane>
+            <AnchorPane fx:id="pubUpdatePane" layoutX="58.0" layoutY="248.0" prefHeight="334.0" prefWidth="674.0" visible="false">
+               <children>
+                  <TextField fx:id="newUser2" alignment="CENTER" layoutX="310.0" layoutY="15.0" prefHeight="36.0" prefWidth="229.0" promptText="New Username">
+                     <font>
+                        <Font name="Segoe UI" size="14.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="newPass2" alignment="CENTER" layoutX="310.0" layoutY="70.0" prefHeight="36.0" prefWidth="229.0" promptText="New Password">
+                     <font>
+                        <Font name="Segoe UI" size="14.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="newEmail2" alignment="CENTER" layoutX="310.0" layoutY="123.0" prefHeight="36.0" prefWidth="229.0" promptText="New Email">
+                     <font>
+                        <Font name="Segoe UI" size="14.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="newName2" alignment="CENTER" layoutX="310.0" layoutY="191.0" prefHeight="36.0" prefWidth="229.0" promptText="New Name">
+                     <font>
+                        <Font name="Segoe UI" size="14.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="newBank2" alignment="CENTER" layoutX="310.0" layoutY="236.0" prefHeight="36.0" prefWidth="229.0" promptText="New Bank No">
+                     <font>
+                        <Font name="Segoe UI" size="14.0" />
+                     </font>
+                  </TextField>
+                  <ImageView fitHeight="31.0" fitWidth="39.0" layoutX="262.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@assets/profile-user.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="31.0" fitWidth="39.0" layoutX="262.0" layoutY="73.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@assets/password.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="31.0" fitWidth="39.0" layoutX="262.0" layoutY="126.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@assets/mail.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="31.0" fitWidth="39.0" layoutX="262.0" layoutY="193.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@assets/lname.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="31.0" fitWidth="39.0" layoutX="262.0" layoutY="239.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@assets/money.png" />
+                     </image>
+                  </ImageView>
+                  <Text fx:id="oldUser2" fill="WHITE" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Old Username:" textAlignment="RIGHT" wrappingWidth="220.8000122070314">
+                     <font>
+                        <Font name="Segoe UI" size="15.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="oldPass2" fill="WHITE" layoutY="94.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Old Password:" textAlignment="RIGHT" wrappingWidth="220.8000122070314">
+                     <font>
+                        <Font name="Segoe UI" size="15.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="oldEmail2" fill="WHITE" layoutX="5.0" layoutY="146.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Old Email:" textAlignment="RIGHT" wrappingWidth="220.8000122070314">
+                     <font>
+                        <Font name="Segoe UI" size="15.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="oldName2" fill="WHITE" layoutX="5.0" layoutY="215.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Old Name:" textAlignment="RIGHT" wrappingWidth="220.8000122070314">
+                     <font>
+                        <Font name="Segoe UI" size="15.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="oldBank2" fill="WHITE" layoutX="5.0" layoutY="260.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Old Bank No" textAlignment="RIGHT" wrappingWidth="220.8000122070314">
+                     <font>
+                        <Font name="Segoe UI" size="15.0" />
+                     </font>
+                  </Text>
+                  <StackPane fx:id="pubUpdateFinalButton" layoutX="574.0" layoutY="244.0" onMouseClicked="#pressPubUpdateIm" onMouseEntered="#enterCustUpdateIm" onMouseExited="#exitCustUpdateIm" prefHeight="75.0" prefWidth="75.0">
+                     <children>
+                        <ImageView fitHeight="68.0" fitWidth="68.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@assets/update.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </StackPane>
+               </children>
+            </AnchorPane>
+            <ImageView fitHeight="39.0" fitWidth="39.0" layoutX="118.0" layoutY="129.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@assets/uptime.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="menu" layoutX="24.0" layoutY="14.0">
+         <children>
+            <JFXButton fx:id="checkCust" alignment="BOTTOM_CENTER" layoutX="96.0" layoutY="318.0" onMouseClicked="#clickCustCheck" onMouseEntered="#enterCustCheck" onMouseExited="#leaveCustCheck" prefHeight="100.0" prefWidth="152.0" style="-fx-background-color: yellow; -fx-padding: 0 0 10 0;" text="Check Customer" textFill="#5e87f7">
+               <font>
+                  <Font name="Segoe UI Bold" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <ImageView fitHeight="284.0" fitWidth="312.0" layoutX="229.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@assets/ComicDexLogo.png" />
+               </image>
+            </ImageView>
+            <JFXButton fx:id="deleteCust" alignment="BOTTOM_CENTER" layoutX="285.0" layoutY="318.0" onMouseClicked="#clickCustDelete" onMouseEntered="#enterCustDel" onMouseExited="#leaveCustDel" prefHeight="100.0" prefWidth="152.0" style="-fx-background-color: yellow; -fx-padding: 0 0 10 0;" text="Delete Customer" textFill="#5e87f7">
+               <font>
+                  <Font name="Segoe UI Bold" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXButton fx:id="updateCust" alignment="BOTTOM_CENTER" layoutX="482.0" layoutY="318.0" onMouseClicked="#clickCustUpdate" onMouseEntered="#enterCustUpdate" onMouseExited="#leaveCustUpdate" prefHeight="100.0" prefWidth="152.0" style="-fx-background-color: yellow; -fx-padding: 0 0 10 0;" text="Update Customer" textFill="#5e87f7">
+               <font>
+                  <Font name="Segoe UI Bold" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXButton fx:id="checkPub" alignment="BOTTOM_CENTER" layoutX="96.0" layoutY="427.0" onMouseClicked="#clickPubCheck" onMouseEntered="#enterPubCheck" onMouseExited="#leavePubCheck" prefHeight="100.0" prefWidth="152.0" style="-fx-background-color: yellow; -fx-padding: 0 0 10 0;" text="Check Publisher" textFill="#5e87f7">
+               <font>
+                  <Font name="Segoe UI Bold" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXButton fx:id="deletePub" alignment="BOTTOM_CENTER" layoutX="285.0" layoutY="427.0" onMouseClicked="#clickPubDelete" onMouseEntered="#enterPubDel" onMouseExited="#leavePubDel" prefHeight="100.0" prefWidth="152.0" style="-fx-background-color: yellow; -fx-padding: 0 0 10 0;" text="Delete Publisher" textFill="#5e87f7">
+               <font>
+                  <Font name="Segoe UI Bold" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXButton fx:id="updatePub" alignment="BOTTOM_CENTER" layoutX="482.0" layoutY="427.0" onMouseClicked="#clickPubUpdate" onMouseEntered="#enterPubUpdate" onMouseExited="#leavePubUpdate" prefHeight="100.0" prefWidth="152.0" style="-fx-background-color: yellow; -fx-padding: 0 0 10 0;" text="Update Publisher" textFill="#5e87f7">
+               <font>
+                  <Font name="Segoe UI Bold" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant />
+                     </light>
+                  </Lighting>
+               </effect>
+            </JFXButton>
+            <ImageView disable="true" fitHeight="60.0" fitWidth="75.0" layoutX="150.0" layoutY="330.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@assets/review.png" />
+               </image>
+            </ImageView>
+            <ImageView disable="true" fitHeight="60.0" fitWidth="75.0" layoutX="331.0" layoutY="330.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@assets/delete.png" />
+               </image>
+            </ImageView>
+            <ImageView disable="true" fitHeight="60.0" fitWidth="75.0" layoutX="528.0" layoutY="330.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@assets/communication.png" />
+               </image>
+            </ImageView>
+            <ImageView disable="true" fitHeight="60.0" fitWidth="75.0" layoutX="150.0" layoutY="433.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@assets/documents.png" />
+               </image>
+            </ImageView>
+            <ImageView disable="true" fitHeight="60.0" fitWidth="75.0" layoutX="331.0" layoutY="433.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@assets/trash.png" />
+               </image>
+            </ImageView>
+            <ImageView disable="true" fitHeight="60.0" fitWidth="75.0" layoutX="528.0" layoutY="433.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@assets/uptime.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <JFXButton fx:id="logOut" alignment="CENTER" layoutX="624.0" layoutY="34.0" onMouseClicked="#pressLogoutButton" onMouseEntered="#enterLogoutButton" onMouseExited="#leaveLogoutButton" prefHeight="39.0" prefWidth="123.0" style="-fx-background-color: Red;" text="Log Out" textAlignment="CENTER" textFill="LIGHTGREEN">
+         <font>
+            <Font name="Segoe UI Bold" size="17.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+   </children>
+</AnchorPane>
